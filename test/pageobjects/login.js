@@ -10,16 +10,18 @@ class LoginPage extends Page {
     get signInName () { return $('#signInName'); }
     get signInPassword () { return $('#password'); }
     get signInButton () { return $('#next'); }
+    get headerCostcoLogo () { return $('//img[@automation-id="headerCostcoLogo"]'); }
 
     async login (userName, password) {
-        await browser.pause(500);
-        await this.signIn.click();
         await browser.pause(500)
-        await this.signInName.setValue(userName);
-        await this.signInPassword.setValue(password);
-        await browser.pause(500);
-        await this.signInButton.click();
+        await this.signIn.click()
         await browser.pause(500)
+        await this.signInName.setValue(userName)
+        await browser.pause(500)
+        await this.signInPassword.setValue(password)
+        await this.signInButton.click()
+        await browser.pause(500)
+        await expect(this.headerCostcoLogo).toExist
     }
 
 }

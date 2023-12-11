@@ -1,5 +1,5 @@
 import LoginPage from '../pageobjects/login.js'
-import siteNav from '../pageobjects.siteNav.js'
+import SiteNav from '../pageobjects/siteNav.js'
 
 describe ('Costco Login', () => {
     it('should log in using valid credentials', async () => {
@@ -10,6 +10,6 @@ describe ('Costco Login', () => {
 
 describe ('Search for Apple in search field', () => {
     it('should search for text entered in search field', async () => {
-
+        await SiteNav.searchBox('Apple')
     })
 })

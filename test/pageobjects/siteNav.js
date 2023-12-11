@@ -2,17 +2,20 @@ import { $ } from '@wdio/globals'
 import { browser } from '@wdio/globals'
 import Page from './page.js';
 
-class siteNav extends Page {
+class SiteNav extends Page {
 
     get searchField () { return $('#search-field'); }
     get returnSearch () { return $('#searchWidgetButton'); }
 
-    async navSearch (searchText) {
-        await siteNav.searchField.click()
-        await siteNav.searchField.setValue(searchText)
-        browser.pause(3000)
-        await siteNav.siteNav.returnSearch.click()
-        brwoser.pause(3000)    
+    async searchBox (searchText) {
+        await browser.pause(1000)
+        await this.searchField.click()
+        await this.searchField.setValue(searchText)
+        await browser.pause(1000)
+        await this.returnSearch.click()
+        await browser.pause(1000)    
     }
 
 }
+
+export default new SiteNav();
