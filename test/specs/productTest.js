@@ -10,6 +10,7 @@ describe ('Costco Login', () => {
 
 describe ('Search for Apple in search field', () => {
     it('should search for text entered in search field', async () => {
+        //await SiteNav.open()
         await SiteNav.searchBox('Apple')
     })
 })

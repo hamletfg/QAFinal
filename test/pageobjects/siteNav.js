@@ -5,7 +5,8 @@ import Page from './page.js';
 class SiteNav extends Page {
 
     get searchField () { return $('#search-field'); }
-    get returnSearch () { return $('#searchWidgetButton'); }
+    get returnSearch () { return $('i[automation-id="searchWidgetButton"]'); }
+    //get returnSearch () { return $('//i[@automation-id="searchWidgetButton"]') }
 
     async searchBox (searchText) {
         await browser.pause(1000)
@@ -13,7 +14,7 @@ class SiteNav extends Page {
         await this.searchField.setValue(searchText)
         await browser.pause(1000)
         await this.returnSearch.click()
-        await browser.pause(1000)    
+        await browser.pause(10000)    
     }
 
 }
