@@ -14,6 +14,7 @@ class LoginPage extends Page {
     async login (userName, password) {
         await browser.pause(500);
         await this.signIn.click();
+        await browser.pause(500)
         await this.signInName.setValue(userName);
         await this.signInPassword.setValue(password);
         await browser.pause(500);
