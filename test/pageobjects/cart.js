@@ -1,16 +1,25 @@
-import { $ } from '@wdio/globals'
-import { browser } from '@wdio/globals'
+import { $ } from '@wdio/globals';
 import OpenURL from './openURL.js';
 
 class Cart extends OpenURL {
 
-    get increaseBtninCart () { return $('button[automation-id="increaseButton_0"]') }
-    get appleCareFromCart () { return $('//div[@id="ProtectionPlan_1073399_90075009"]') }
-    get expressShipping () { return $('span[data-shipmodeid="11153"]') }
-    get checkoutBtn () { return $('input[automation-id="shopCartCheckoutButton"]') }
+    get increaseBtninCart () { 
+        return $('button[automation-id="increaseButton_0"]') 
+    }
 
-    async expressShipping () {
-        await this.expressShipping.waitForDisplayed()
+    get appleCareFromCart () { 
+        return $('//div[@id="ProtectionPlan_1073399_90075009"]') 
+    }
+
+    get expressShipping () { 
+        return $('//span[@class="ship-type-and-cost"][contains(text(), "Express")]') 
+    }
+    get checkoutBtn () { 
+        return $('input[automation-id="shopCartCheckoutButton"]') 
+    }
+
+    async expressShippingBtnClick () {
+        //await this.expressShipping.waitForClickable({ timeout: 2000 })
         await this.expressShipping.click()
     }
 
@@ -18,9 +27,6 @@ class Cart extends OpenURL {
         await this.checkoutBtn.waitForDisplayed()
         await this.checkoutBtn.click()
     }
-
-
-
 
 }   
 

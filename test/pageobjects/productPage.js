@@ -1,5 +1,5 @@
-import { $ } from '@wdio/globals'
-import { browser } from '@wdio/globals'
+import { $ } from '@wdio/globals';
+import { browser } from '@wdio/globals';
 import OpenURL from './openURL.js';
 
 class ProductPage extends OpenURL {
@@ -18,6 +18,7 @@ class ProductPage extends OpenURL {
 
     async selectItemOption () {
         await this.selectSilver.waitForDisplayed()
+        await browser.pause(500)
         await this.selectSilver.click()
         await browser.pause(500)
     }
@@ -25,11 +26,11 @@ class ProductPage extends OpenURL {
     async addToCart () {
         await this.addToCartBtn.waitForDisplayed()
         await this.addToCartBtn.click()
-        await browser.pause(30000)
+        //await browser.pause(20000)
     }
 
     async addedToCartModal () {
-        await this.addToCartModal.waitForDisplayed()
+        await this.viewCartBtn.waitForClickable({ timeout: 12000 })
         await this.viewCartBtn.click()
     }
 
