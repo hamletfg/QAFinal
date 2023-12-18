@@ -1,5 +1,4 @@
 import ProductPage from '../pageobjects/productPage.js'
-import SearchBoxComponent from '../pageobjects/searchBox.js'
 
 describe('Product on Costco Website', () => {
     it('should open the Macbook Pro 14" Product Page', async () => {
