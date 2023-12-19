@@ -12,6 +12,7 @@ describe ('Click add item to cart', () => {
         await ProductPage.selectItemOption()
         await ProductPage.addToCart()
     })
+
 })
 
 describe ('Click View Cart button', () => {
@@ -26,8 +27,8 @@ describe ('Select Express Shipping', () => {
     })
 })
 
-/*describe ('Checkout', () => {
+describe ('Checkout', () => {
     it('click on Checkout button and proceed to payment page', async () => {
         await Cart.checkout()
     })
-})*/
+})
