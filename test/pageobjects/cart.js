@@ -19,7 +19,6 @@ class Cart extends OpenURL {
     }
 
     async expressShippingBtnClick () {
-        //await this.expressShipping.waitForClickable({ timeout: 2000 })
         await this.expressShipping.click()
     }
 

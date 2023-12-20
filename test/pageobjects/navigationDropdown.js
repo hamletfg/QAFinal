@@ -52,8 +52,6 @@ class NavigationDropdown extends OpenURL {
         await this.laptopsAndNotebooks.click()
         await this.macBookImg.waitForClickable({ timeout: 1000 })
         await this.macBookImg.click()
-        //await this.macBook.waitForClickable({ timeout: 1000 })
-        //await this.macBook.click()
         await browser.pause(500)
 
     }

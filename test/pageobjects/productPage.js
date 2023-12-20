@@ -26,7 +26,6 @@ class ProductPage extends OpenURL {
     async addToCart () {
         await this.addToCartBtn.waitForDisplayed()
         await this.addToCartBtn.click()
-        //await browser.pause(20000)
     }
 
     async addedToCartModal () {
