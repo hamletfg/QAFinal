@@ -41,7 +41,7 @@ class NavigationDropdown extends OpenURL {
     }
 
     async openPage () {
-        await this.openURL();
+        await this.openURL('');
     }
 
     async dropdownMacbookPro () {
