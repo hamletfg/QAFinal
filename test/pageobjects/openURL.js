@@ -2,7 +2,11 @@ import { browser } from '@wdio/globals'
 
 export default class OpenURL {
 
-    openURL (endPoint) {
+    openURLwithEndPoint (endPoint) {
         return browser.url(`https://www.costco.com/${endPoint}`)
+    }
+
+    openURL () {
+        return browser.url('https://www.costco.com')
     }
 }
